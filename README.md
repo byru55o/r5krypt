@@ -19,7 +19,7 @@ Replace salt in the script with the output of **os.urandom(16)**.
 In this case it will be:  ```salt: bytes = b"\xe0\x0fO\xc0;mf\x03\xb5<6'\xe0\xa6+6"```                      
 Remember to change the salt in your _mate's file also_. In case you are decrypting in another computer
 ## Problems
-You can report problems [here](https://github.com/Kik449/schat/issues)!                      
+You can report problems [here](https://github.com/KRNET009/krkrypter/issues)!                      
 Don't be afraid of asking questions, if it is posible, we will be answering them.
 ## Authors 
 **ru55o**: added 32 characters key generation and SHA-256 encryption string encryption and decryption, later file encryption and decryption.
