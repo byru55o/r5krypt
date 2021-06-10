@@ -1,4 +1,4 @@
-# krkrypter
+# r5krypt
 ## Introduction
 This is a string and file encrypter and decrypter. Works with **SHA-256** algorithm by creating a **ultra-secure key**.
 ## Quick guide              
