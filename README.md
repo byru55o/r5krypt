@@ -5,7 +5,7 @@ This is a string and file encrypter and decrypter. Works with **SHA-256** algori
 As easy as it gets, make sure the string or file is decrypted with the same program that it was encrypted.    
 ## Requirements
 **Python version:** 3.6 or greater                                   
-**Libraries:** base64, pathlib, colorama, cryptography, and pyfiglet.             
+**Libraries:** base64, pathlib, colorama, cryptography and pyfiglet.             
 ## More information:
 If you want the maximum security, change the salt at line 21.            
 We recommend generating one yourself using os.           
