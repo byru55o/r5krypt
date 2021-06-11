@@ -3,7 +3,7 @@
 This is a string and file encrypter and decrypter. Works with **SHA-256** algorithm by creating a **ultra-secure key**.
 ## Quick guide              
 As easy as it gets, make sure the string or file is decrypted with the same program that it was encrypted.    
-I'm not going to explain what steps you have to follow in order to dectrypt and encrypt, because the program is very intuitive.
+I'm not going to explain what steps you have to follow in order to decrypt and encrypt, because the program is very intuitive.
 ## Requirements
 **Python version:** 3.6 or greater                                   
 **Libraries:** base64, pathlib, colorama, cryptography and pyfiglet.             
