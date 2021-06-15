@@ -10,7 +10,7 @@ from pyfiglet import Figlet
 
 init(autoreset=True)
 
-custom_fig = Figlet(font='utopiab')
+custom_fig = Figlet(font='big')
 print(Fore.CYAN + custom_fig.renderText('SHA-256'))
 print(Fore.BLUE + "By ru55o.")
 input("press ENTER to continue...")
