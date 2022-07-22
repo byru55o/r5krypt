@@ -1,5 +1,7 @@
 import base64
 
+from sys import platform
+from os import system
 from pathlib import Path
 from colorama import Fore, init, Back
 from cryptography.fernet import Fernet
@@ -15,10 +17,17 @@ print(Fore.CYAN + custom_fig.renderText('SHA-256'))
 print(Fore.BLUE + "By ru55o.")
 input("press ENTER to continue...")
 
-print("\n" * 80)
+def clear():
+    if platform.startswith('win') or platform.startswith('cygwin'):
+        system('cls')
+    else:
+        system('clear')
+
+
+clear()
 password_introduced = input(Fore.CYAN + "PASSWORD: ")
 password = password_introduced.encode()
-salt: bytes = b'\x9d\xe8j\xee\x03b\xff]\xefd\xaa]7%\x9a('
+salt: bytes = b'5\\;\x85\xf0%\xc6wW\x0b\x91Xo~j\xa3'
 kdf = PBKDF2HMAC(
     algorithm=hashes.SHA256(),
     length=32,
@@ -46,7 +55,7 @@ def decrypt():
     print(Fore.RED + "DECRYPTED TEXT: " + Fore.LIGHTWHITE_EX + str(decrypted_message))
 
 
-def fileEncrypt():
+def file_encrypt():
     file_path = Path(input(Fore.CYAN + "FILE PATH: "))
     f = Fernet(key)
     with open(file_path, 'rb') as file:
@@ -58,7 +67,7 @@ def fileEncrypt():
         encrypted_file.write(encrypted)
 
 
-def fileDecryption():
+def file_decrypt():
     file_path = Path(input(Fore.CYAN + "FILE PATH: "))
     f = Fernet(key)
     with open(file_path, 'rb') as file:
@@ -69,15 +78,29 @@ def fileDecryption():
     with open(destination_path, 'wb') as decrypted_file:
         decrypted_file.write(decrypted)
 
+
 while True:
-    input("press " + Fore.RED + "ENTER " + Fore.RESET + "to continue")
-    print("\n" * 80)
-    choice = input(Fore.CYAN + "ENCRYPT [1] \\ DECRYPT [2] \\ FILE ENCRYPTION [3] \\ FILE DECRYPTION [4]:")
+    input(Fore.RESET + "press " + Fore.RED + "ENTER " + Fore.RESET + "to continue")
+    clear()
+    print(Fore.CYAN + '''
+    [0]: Exit program
+    [1]: Encrypt string
+    [2]: Decrypt string
+    [3]: Encrypt file
+    [4]: Decrypt file
+    ''')
+    choice = input(Fore.GREEN + "r5krypt:~$ " + Fore.RESET)
     if choice == "1":
         encrypt()
     elif choice == "2":
         decrypt()
     elif choice == "3":
-        fileEncrypt()
+        file_encrypt()
     elif choice == "4":
-        fileDecryption()
+        file_decrypt()
+    elif choice == "clear":
+        clear()
+    elif choice == "quit" or choice == "0":
+        quit()
+    else:
+        print("That's not a valid option")
