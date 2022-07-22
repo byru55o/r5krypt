@@ -27,7 +27,7 @@ def clear():
 clear()
 password_introduced = input(Fore.CYAN + "PASSWORD: ")
 password = password_introduced.encode()
-salt: bytes = b'5\\;\x85\xf0%\xc6wW\x0b\x91Xo~j\xa3'
+salt: bytes = b'\x9d\xe8j\xee\x03b\xff]\xefd\xaa]7%\x9a('
 kdf = PBKDF2HMAC(
     algorithm=hashes.SHA256(),
     length=32,
